@@ -1,0 +1,123 @@
+:root {
+	--orange: hsl(31, 77%, 52%);
+	--cyan: hsl(184, 100%, 22%);
+	--cyan-dark: hsl(179, 100%, 13%);
+	--white-trans: hsla(0, 0%, 100%, 0.75);
+	--off-white: hsl(0, 0%, 95%);
+
+	/* Transparent white (paragraphs): 
+Very light gray (background, headings, buttons): */
+}
+
+html {
+	font-size: 15px;
+	height: 100%;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	box-sizing: border-box;
+	padding: 5.8666666667rem 1.6rem;
+	font: 400 1rem / 1.5 "Lexend Deca", sans-serif;
+	display: flex;
+	flex-wrap: wrap;
+	place-content: center;
+	background-color: var(--off-white);
+}
+
+article {
+	flex: 1 1 100%;
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 20rem;
+	padding: 3.2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	contain: content;
+	z-index: 1;
+}
+
+article:nth-child(1) {
+	color: var(--orange);
+	background-color: currentColor;
+	border-radius: 0.5333333333rem 0 0 0.5333333333rem;
+}
+
+article:nth-child(2) {
+	color: var(--cyan);
+	background-color: currentColor;
+}
+
+article:nth-child(3) {
+	color: var(--cyan-dark);
+	background-color: currentColor;
+	border-radius: 0 0.5333333333rem 0.5333333333rem 0;
+}
+
+h1 {
+	text-transform: uppercase;
+	font-family: "Big Shoulders Display", cursive;
+	color: var(--off-white);
+	font-size: 2.6666666667rem;
+	margin: 1em 0;
+	line-height: 1;
+}
+
+p {
+	margin: 0 0 5.7333333333rem;
+	color: var(--white-trans);
+}
+
+button {
+	margin-top: auto;
+	background: var(--off-white);
+	border: 2px solid var(--off-white);
+	font-family: inherit;
+	color: inherit;
+	height: 3.2rem;
+	padding: 0 2rem;
+	border-radius: 3.2rem;
+	transition: color 0.2s linear, background-color 0.2s ease-in-out;
+	cursor: pointer;
+}
+
+button:hover {
+	color: var(--off-white);
+	background-color: transparent;
+}
+
+.attribution {
+	font-size: 12px;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	width: calc(100vw - 50px);
+	transform: translateX(-50%);
+	padding: 0.5rem 0;
+	opacity: 0.5;
+}
+
+.attribution a {
+	color: inherit;
+}
+
+@media (max-width: 950px) {
+	body {
+		flex-direction: column;
+	}
+
+	article:nth-child(1) {
+		border-radius: 0.5333333333rem 0.5333333333rem 0 0;
+	}
+
+	article:nth-child(3) {
+		border-radius: 0 0 0.5333333333rem 0.5333333333rem;
+	}
+
+	p {
+		margin: 0 0 2rem;
+	}
+}
